@@ -5,21 +5,23 @@ public class EmployeeFulltime extends Employee {
     private boolean statusWork;
     private double salary;
     private String position;
-    private String dateToCompany;
+    private String dateExpireContract;
     private String dateSignContract;
     private String companyName;
     private long departmentId;
+    private int dateOfLeave;
 
-    public EmployeeFulltime(int id, String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String type, boolean statusWork, double salary, String position, String dateToCompany, String dateSignContract, String companyName, long departmentId) {
+    public EmployeeFulltime(int id, String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String type, boolean statusWork, double salary, String position, String dateExpireContract, String dateSignContract, String companyName, long departmentId, int dateOfLeave) {
         super(id, name, age, gender, maritalStatus, address, phone, email, dayOfBirth);
         this.type = type;
         this.statusWork = statusWork;
         this.salary = salary;
         this.position = position;
-        this.dateToCompany = dateToCompany;
+        this.dateExpireContract = dateExpireContract;
         this.dateSignContract = dateSignContract;
         this.companyName = companyName;
         this.departmentId = departmentId;
+        this.dateOfLeave = dateOfLeave;
     }
 
     public String getType() {
@@ -55,11 +57,11 @@ public class EmployeeFulltime extends Employee {
     }
 
     public String getDateToCompany() {
-        return dateToCompany;
+        return dateExpireContract;
     }
 
     public void setDateToCompany(String dateToCompany) {
-        this.dateToCompany = dateToCompany;
+        this.dateExpireContract = dateToCompany;
     }
 
     public String getDateSignContract() {
@@ -84,5 +86,14 @@ public class EmployeeFulltime extends Employee {
 
     public void setDepartmentId(long departmentId) {
         this.departmentId = departmentId;
+    }
+
+
+    public int getDateOfLeave() {
+        return dateOfLeave;
+    }
+
+    public void setDateOfLeave(int dateOfLeave) {
+        this.dateOfLeave = dateOfLeave;
     }
 }

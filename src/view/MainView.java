@@ -1,10 +1,12 @@
 package view;
 
+import controller.EmployeeFTController;
 import model.entity.EmployeeFulltime;
 import model.entity.EmployeePartime;
 
 import java.util.List;
 import java.util.Scanner;
+
 
 public class MainView {
 
@@ -34,10 +36,8 @@ public class MainView {
     }
 
         public static void menu() {
-//            StudentController studentController = new StudentController();
+            EmployeeFTController employeeController = new EmployeeFTController();
             int choice;
-            List<EmployeeFulltime> employeeFulltimes;
-            List<EmployeePartime> employeePartimes;
             while (true) {
                 System.out.println("MENU QUẢN LÝ NHÂN VIÊN");
                 System.out.println("1. Hiển thị danh sách nhân viên");
@@ -51,9 +51,8 @@ public class MainView {
                 choice = inputChoice();
                 switch (choice) {
                     case 1:
-//                        students = studentController.getAll();
-//                        display(students);
-                        System.out.println("Hello");
+                        List<EmployeeFulltime> employeeFT = employeeController.getAll();
+                        displayEmployeeFT(employeeFT);
                         break;
                     case 2:
 //                        student = inputStudent();
@@ -154,12 +153,12 @@ public class MainView {
 //
 //        }
 
-//        public static void display(List<Student> students) {
-//            System.out.println("Hiển thị danh sách học sinh");
-//            for (Student student : students) {
-//                System.out.println(student);
-//            }
-//        }
+        public static void displayEmployeeFT(List<EmployeeFulltime> employeeFulltimes) {
+            System.out.println("Hiển thị danh sách học sinh");
+            for (EmployeeFulltime employeeFulltime : employeeFulltimes) {
+                System.out.println(employeeFulltime);
+            }
+        }
 
     private static int inputChoice() {
         Scanner scanner = new Scanner(System.in);
