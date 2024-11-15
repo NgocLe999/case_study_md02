@@ -1,5 +1,6 @@
 package controller;
 
+import model.entity.DTO.EmployeeFullTimeDTO;
 import model.entity.EmployeeFulltime;
 import service.impl.EmployeeFTService;
 
@@ -33,7 +34,13 @@ public class EmployeeFTController {
         employeeFullTimeService.remove(id);
     }
 
-//    public void updateEmployeeById(int id, StudentDTO studentDto) {
-//        studentService.updateStudentById(id, studentDto);
-//    }
+    public boolean isExistsEmployee(int id) {
+        if( employeeFullTimeService.findById(id) != null) {
+            return true;
+        }
+        return false;
+    }
+    public void updateEmployeeById(int id, EmployeeFullTimeDTO employeeDTO) {
+        employeeFullTimeService.updateEmployeeById(id, employeeDTO);
+    }
 }

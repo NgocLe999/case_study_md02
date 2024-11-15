@@ -1,8 +1,9 @@
-package model.entity;
+package model.entity.DTO;
 
-public class Employee {
+import model.entity.Employee;
 
-    private int id;
+public class EmployeeFullTimeDTO  {
+
     private String name;
     private int age;
     private String gender;
@@ -11,9 +12,10 @@ public class Employee {
     private String phone;
     private String email;
     private String dayOfBirth;
+    private String statusWork;
+    private double salary;
 
-    public Employee(int id, String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth) {
-        this.id = id;
+    public EmployeeFullTimeDTO(String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String statusWork, double salary) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -22,14 +24,8 @@ public class Employee {
         this.phone = phone;
         this.email = email;
         this.dayOfBirth = dayOfBirth;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.statusWork = statusWork;
+        this.salary = salary;
     }
 
     public String getName() {
@@ -96,18 +92,35 @@ public class Employee {
         this.dayOfBirth = dayOfBirth;
     }
 
+    public String getStatusWork() {
+        return statusWork;
+    }
+
+    public void setStatusWork(String statusWork) {
+        this.statusWork = statusWork;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "EmployeeFullTimeDTO{" +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", maritalStatus='" + maritalStatus + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", dayOfBirth='" + dayOfBirth + '\''
-                ;
+                ", dayOfBirth='" + dayOfBirth + '\'' +
+                ", statusWork='" + statusWork + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
