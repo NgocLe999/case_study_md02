@@ -5,20 +5,20 @@ public class EmployeeFulltime extends Employee {
     private String statusWork;
     private double salary;
     private String position;
-    private String dateExpireContract;
     private String dateSignContract;
+    private String dateExpireContract;
     private final String companyName = "HOSPITAL A";
     private long departmentId;
     private int dateOfLeave;
 
-    public EmployeeFulltime(int id, String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String type, String statusWork, double salary, String position, String dateExpireContract, String dateSignContract, long departmentId, int dateOfLeave) {
+    public EmployeeFulltime(long id, String name, String age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String type, String statusWork, double salary, String position,  String dateSignContract, String dateExpireContract, long departmentId, int dateOfLeave) {
         super(id, name, age, gender, maritalStatus, address, phone, email, dayOfBirth);
         this.type = type;
         this.statusWork = statusWork;
         this.salary = salary;
         this.position = position;
-        this.dateExpireContract = dateExpireContract;
         this.dateSignContract = dateSignContract;
+        this.dateExpireContract = dateExpireContract;
         this.departmentId = departmentId;
         this.dateOfLeave = dateOfLeave;
     }
@@ -100,8 +100,8 @@ public class EmployeeFulltime extends Employee {
                 ", statusWork='" + statusWork + '\'' +
                 ", salary=" + salary +
                 ", position='" + position + '\'' +
-                ", dateExpireContract='" + dateExpireContract + '\'' +
                 ", dateSignContract='" + dateSignContract + '\'' +
+                ", dateExpireContract='" + dateExpireContract + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", departmentId=" + departmentId +
                 ", dateOfLeave=" + dateOfLeave +

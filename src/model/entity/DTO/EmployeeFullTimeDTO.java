@@ -1,11 +1,9 @@
 package model.entity.DTO;
 
-import model.entity.Employee;
-
 public class EmployeeFullTimeDTO  {
 
     private String name;
-    private int age;
+    private String age;
     private String gender;
     private String maritalStatus;
     private String address;
@@ -15,7 +13,7 @@ public class EmployeeFullTimeDTO  {
     private String statusWork;
     private double salary;
 
-    public EmployeeFullTimeDTO(String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String statusWork, double salary) {
+    public EmployeeFullTimeDTO(String name, String age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth, String statusWork, double salary) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -36,11 +34,11 @@ public class EmployeeFullTimeDTO  {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

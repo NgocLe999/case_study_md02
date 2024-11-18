@@ -7,11 +7,11 @@ public interface IService <T>{
 
     void save(T s);
 
-    void update(int id, T s);
+    void update(long id, T s);
 
-    void remove(int id);
+    void remove(long id);
 
-    T findById(int id);
+    T findById(long id);
 
     List<T> findByName(String name);
 }

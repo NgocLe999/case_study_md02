@@ -2,9 +2,9 @@ package model.entity;
 
 public class Employee {
 
-    private int id;
+    private long id;
     private String name;
-    private int age;
+    private String age;
     private String gender;
     private String maritalStatus;
     private String address;
@@ -12,7 +12,7 @@ public class Employee {
     private String email;
     private String dayOfBirth;
 
-    public Employee(int id, String name, int age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth) {
+    public Employee(long id, String name, String age, String gender, String maritalStatus, String address, String phone, String email, String dayOfBirth) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -24,7 +24,7 @@ public class Employee {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -40,11 +40,11 @@ public class Employee {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

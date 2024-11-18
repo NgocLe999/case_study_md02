@@ -24,17 +24,17 @@ public class EmployeeFTService implements IEmployeeFTService {
     }
 
     @Override
-    public void update(int id, EmployeeFulltime s) {
+    public void update(long id, EmployeeFulltime s) {
 
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(long id) {
         employeeFTRepository.deleteEmployeeFulltime(id);
     }
 
     @Override
-    public EmployeeFulltime findById(int id) {
+    public EmployeeFulltime findById(long id) {
         return employeeFTRepository.findEmployeeFulltime(id);
     }
 
@@ -44,7 +44,14 @@ public class EmployeeFTService implements IEmployeeFTService {
     }
 
     @Override
-    public void updateEmployeeById(int id, EmployeeFullTimeDTO employeeDTO) {
+    public void updateEmployeeById(long id, EmployeeFullTimeDTO employeeDTO) {
         employeeFTRepository.updateEmployeeFT(id, employeeDTO);
     }
+
+    @Override
+    public String getDateContract(long id) {
+        return employeeFTRepository.getDateContract(id);
+    }
+
+
 }

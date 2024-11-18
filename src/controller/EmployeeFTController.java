@@ -22,7 +22,7 @@ public class EmployeeFTController {
         employeeFullTimeService.save(employeeFullTime);
     }
 
-    public EmployeeFulltime getEmployeeById(int id) {
+    public EmployeeFulltime getEmployeeById(long id) {
         EmployeeFulltime employeeFullTime = employeeFullTimeService.findById(id);
         if (employeeFullTime == null) {
             return null;
@@ -30,17 +30,21 @@ public class EmployeeFTController {
         return employeeFullTime;
     }
 
-    public void deleteEmployeeById(int id) {
+    public void deleteEmployeeById(long id) {
         employeeFullTimeService.remove(id);
     }
 
-    public boolean isExistsEmployee(int id) {
+    public boolean isExistsEmployee(long id) {
         if( employeeFullTimeService.findById(id) != null) {
             return true;
         }
         return false;
     }
-    public void updateEmployeeById(int id, EmployeeFullTimeDTO employeeDTO) {
+    public void updateEmployeeById(long id, EmployeeFullTimeDTO employeeDTO) {
         employeeFullTimeService.updateEmployeeById(id, employeeDTO);
+    }
+
+    public String getDateContract(long id){
+        return employeeFullTimeService.getDateContract(id);
     }
 }

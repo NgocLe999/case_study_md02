@@ -17,17 +17,17 @@ public class EmployeePTService implements IEmployeePTService {
     }
 
     @Override
-    public void update(int id, EmployeePartime s) {
+    public void update(long id, EmployeePartime s) {
 
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(long id) {
 
     }
 
     @Override
-    public EmployeePartime findById(int id) {
+    public EmployeePartime findById(long id) {
         return null;
     }
 
