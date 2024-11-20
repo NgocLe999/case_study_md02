@@ -63,7 +63,6 @@ public class MainView {
                 case 1:
                     List<EmployeeFulltime> employeeFT = employeeFTController.getAll();
                     displayEmployeeFT(employeeFT);
-
                     break;
                 case 2:
                     EmployeeFulltime employee = inputEmployeeFulltime();
@@ -273,7 +272,7 @@ public class MainView {
         String position;
         while (true) {
             try {
-                System.out.print("Mời bạn nhập id vị trí làm việc: ");
+                System.out.print("Mời bạn nhập vị trí làm việc: ");
                 position = scanner.nextLine();
                 GlobalException.checkEmptyString(position);
                 break;
@@ -346,6 +345,10 @@ public class MainView {
     }
 
     public static void displayEmployeeFT(List<EmployeeFulltime> employeeFulltimes) {
+        if(employeeFulltimes == null || employeeFulltimes.isEmpty()){
+            System.out.println("THÔNG BÁO: DANH SÁCH SINH VIÊN HIỆN TẠI ĐANG TRỐNG ! ");
+            return;
+        }
         System.out.println("Hiển thị danh sách nhân viên Fulltime");
         for (EmployeeFulltime employeeFulltime : employeeFulltimes) {
             System.out.println(employeeFulltime);

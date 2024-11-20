@@ -1,6 +1,8 @@
 package model.entity;
 
-public class Employee {
+import java.io.Serializable;
+
+public abstract class Employee implements Serializable {
 
     private long id;
     private String name;

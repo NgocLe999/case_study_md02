@@ -1,9 +1,8 @@
-// Các tính năng chưa làm:
+// Tiến độ case study:
 - Validate email, ngày sinh, thời hạn hợp đồng. "done"
 - Tìm kiếm theo tên không phân biệt chữ hoa chữ thường. "done"
 - Kiểm tra xem nhân viên còn thời hạn hợp đồng bao nhiêu tháng đến thời điểm hiện tại. "done"
-
-- Đọc ghi file.
-- Cập nhật ngày phép.
+- Đọc ghi file. "done"
+- Cập nhật ngày phép. "done"
 - EmployeePartime chưa triển khai.
 
