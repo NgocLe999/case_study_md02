@@ -12,11 +12,12 @@ import java.util.List;
 public class EmployeeFTRepository {
 
     private static final String COMPANY_NAME = "HOSPITAL A";
-    private static  List<EmployeeFulltime> employeeFulltime = new ArrayList<>();
+
+    public static final String SRC_DATA = "src/data/EmployeeFullTime.dat";
     private static IOFILE ioFile = new IOFILE();
 
     public static List<EmployeeFulltime> getAll() {
-        List<EmployeeFulltime> employeeFulltimes = ioFile.readFileBinary(employeeFulltime);
+        List<EmployeeFulltime> employeeFulltimes = ioFile.readFileBinary(SRC_DATA);
         if(employeeFulltimes == null || employeeFulltimes.isEmpty()) {
             return null;
         }
@@ -24,8 +25,9 @@ public class EmployeeFTRepository {
     }
 
     public static void save(EmployeeFulltime employee) {
-        employeeFulltime.add(employee);
-        ioFile.writeFileBinary(employeeFulltime);
+        List<EmployeeFulltime> employeeFulltimes = getAll();
+        employeeFulltimes.add(employee);
+        ioFile.writeFileBinary(employeeFulltimes, SRC_DATA);
     }
 
     public static EmployeeFulltime findEmployeeFulltime(long id) {
@@ -45,15 +47,13 @@ public class EmployeeFTRepository {
         if(employees == null && employees.isEmpty()) {
             return;
         }
-
         for (EmployeeFulltime employee : employees) {
             if (employee.getId() == id) {
                 employees.remove(employee);
                 break;
             }
-            System.out.println("EMPLOYEE NOT FOUND!");
         }
-        ioFile.writeFileBinary(employees);
+        ioFile.writeFileBinary(employees,SRC_DATA);
     }
 
     public static List<EmployeeFulltime>  searchByName (String name){
@@ -141,7 +141,7 @@ public class EmployeeFTRepository {
                 }
             }
         }
-        ioFile.writeFileBinary(employees);
+        ioFile.writeFileBinary(employees,SRC_DATA);
     }
 
     public static String getDateContract(long id ){
