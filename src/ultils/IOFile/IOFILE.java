@@ -1,16 +1,11 @@
 package ultils.IOFile;
 
-import model.entity.EmployeeFulltime;
-import service.Interface.IReadWriteFile;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class IOFILE <T> {
 
-
-    //    public static final String SRC_DATA_EMPLOYEE = "src/data/EmployeeFullTime.dat";
     private List<T> dataArray = new ArrayList<>();
 
     public void writeFileBinary( List<T> data, String SRC_DATA) {
